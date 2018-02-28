@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ngClass Demo</title>
+    <script src="scripts/angular.js"></script>
+    <style>
+        .textstyle{
+            font-size: 25px;
+            color: darkorange;
+            text-align: center;
+        }
+        .borderstyle{
+            border-style: double;
+        }
+
+    </style>
+    <script>
+        var app=angular.module("MyApp",[]);
+        app.controller("HomeController",function ($scope) {
+
+        });
+    </script>
+</head>
+<body ng-app="MyApp">
+<h1 ng-class="'textstyle'">Welcome to Angular Js<br>Through "String" Reference</h1>
+
+<h1 ng-class="['textstyle','borderstyle']">Welcome to Angular Js<br>Through "Array" Reference</h1>
+
+<h1 ng-class={textstyle:false,borderstyle:true}>Welcome to Angular Js<br>Through "Object" Reference</h1>
+<div>
+    <fieldset>
+        <legend>specify style</legend>
+        <input type="checkbox" ng-model="txtstyl">Textstyle
+        <input type="checkbox" ng-model="brdrstyl">Borderstyle
+        <h1 ng-class={textstyle:txtstyl,borderstyle:brdrstyl}>Welcome to Angular Js<br>Through "User" Reference</h1>
+    </fieldset>
+
+</div>
+</body>
+</html>
