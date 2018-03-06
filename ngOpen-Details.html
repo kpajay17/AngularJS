@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-open-demo with details</title>
+    <script src="scripts/angular.js"></script>
+    <style>
+        td{
+            background-color: #5bc0de;
+        }
+    </style>
+</head>
+<body ng-app>
+<table width="800" border="1" align="center">
+    <tr>
+        <td width="300">
+            <h2>Index :</h2>
+            <ul>
+                <li>
+                    <input type="checkbox" ng-model="js">JavaScript
+                </li>
+                <li>
+                    <input type="checkbox" ng-model="aj">Angular Js
+                </li>
+                <li>
+                    <input type="checkbox" ng-model="ht">HTML-5
+                </li>
+            </ul>
+        </td>
+        <td>
+            <details ng-open="js">
+                <summary><b>JavaScript</b></summary>
+                <ol>
+                    <li>
+                    <input type="checkbox" ng-model="itj">Introduction
+                    </li>
+                    <p ng-show="itj">
+                        An object-oriented computer programming language commonly used to create interactive effects within web browsers.
+
+                        JavaScript is the programming language of HTML and the Web.
+
+                        JavaScript is easy to learn.
+
+                        This tutorial will teach you JavaScript from basic to advanced.
+                    </p>
+                    <li>Data Types</li>
+                    <li>Operators</li>
+                    <li>Finction</li>
+                </ol>
+
+            </details ><br>
+            <details ng-open="aj">
+                <summary><b>Angular Js</b></summary>
+                <ol>
+                    <li>Introduction</li>
+                    <li>Directives</li>
+                    <li>Filters</li>
+                    <li>Servces</li>
+                </ol>
+            </details><br>
+            <details ng-open="ht">
+                <summary><b>HTML-5</b></summary>
+                <ol>
+                    <li>Introduction</li>
+                    <li>Tage</li>
+                    <li>Filters</li>
+                    <li>Servces</li>
+                </ol>
+            </details>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

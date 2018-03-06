@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-open-demo with dialog</title>
+    <script src="scripts/angular.js"></script>
+
+</head>
+<body ng-app>
+<input type="checkbox" ng-model="ads">Show Ads
+<dialog ng-open="ads" >
+<input type="radio" ng-model="ads">Hide Ads
+<img src="Images/Shoe.jpg" width="300" height="200">
+</dialog>
+</body>
+</html>

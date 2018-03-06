@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ngHide and ngShow demo</title>
+    <script src="scripts/angular.js"></script>
+    <script>
+        var app=angular.module("MyApp",[]);
+        app.controller("HomeController",function ($scope) {
+            $scope.isVisible=false;
+            $scope.clr1={"background-color" : "whitesmoke"};
+            $scope.clr2={"background-color" : "#3a87ad"};
+            $scope.signin=function(){
+                $scope.isVisible=false;
+                $scope.clr1 = {
+                    "color" : "black",
+                    "background-color" : "whitesmoke",
+                    "font-size" : "25px",
+                }
+                $scope.clr2 = {
+                    "color" : "black",
+                    "background-color" : "#3a87ad",
+                    "font-size" : "25px",
+                }
+            }
+            $scope.signup=function(){
+                $scope.isVisible=true;
+                $scope.clr2 = {
+                    "color" : "black",
+                    "background-color" : "whitesmoke",
+                    "font-size" : "25px",
+
+                }
+                $scope.clr1 = {
+                    "color" : "black",
+                    "background-color" : "#3a87ad",
+                    "font-size" : "25px",
+                }
+            }
+            $scope.login=function () {
+                alert("Login success")
+            }
+            $scope.register=function () {
+                alert("Register success")
+            }
+
+            $scope.refresh=function () {
+                var a=Math.random()*10;
+                var b=Math.random()*10;
+                var c=Math.random()*10;
+                var d=Math.random()*10;
+                var e=Math.random()*10;
+                $scope.captcha=Math.round(a)+""+Math.round(b)+""+Math.round(c)+""+Math.round(d)+""+Math.round(e);
+            }
+        });
+    </script>
+    <style>
+        body{
+            background-image: url("Images/bgpick1.jpg");
+        }
+        div{
+            height: 500px;
+            width: 500px;
+            margin: 100px auto;
+            background-color: #3a87ad;
+        }
+        div.rad{
+            height: 500px;
+            width: 500px;
+            margin: 10px auto;
+            background-color: #3a87ad;
+        }
+        button{
+            height: 60px;
+            width: 245px;
+            margin: 20px auto;
+            color: black;
+            font-size: 25px;
+            border: 15px;
+            border-bottom-color: white;
+
+
+        }
+        input{
+            height: 40px;
+            width: 245px;
+            margin: 10px auto;
+        }
+        table{
+            color: white;
+            font-size: 25px;
+            margin: 7px auto;
+
+        }
+        input.rd {
+            height: 20px;
+            width: 20px;
+            margin: 10px auto;
+        }
+
+    </style>
+</head>
+<body ng-app="MyApp" ng-controller="HomeController">
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>
+                    <button ng-click="signin()" ng-style="clr1"><b>Sign-IN</b></button>
+                </th>
+                <th>
+                    <button ng-click="signup()" ng-style="clr2" ><b>Sign-UP</b></button>
+                </th>
+            </tr>
+            </thead>
+            <table ng-hide="isVisible">
+                <tr>
+                    <td><b>USERNAME</b></td>
+                    <td>
+                        <input type="text" ng-model="username">
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>PASSWORD</b></td>
+                    <td>
+                        <input type="password" ng-model="password">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button ng-click="login()"><b>Log-IN</b></button>
+                    </td>
+                </tr>
+            </table>
+            <div ng-show="isVisible" class="rad">
+            <table  >
+                <tr>
+                    <td><b>NAME</b></td>
+                    <td>
+                        <input type="text" ng-model="name">
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>USERNAME</b></td>
+                    <td>
+                        <input type="text" ng-model="username">
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>PASSWORD</b></td>
+                    <td>
+                        <input type="password" ng-model="password">
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>MOBILE</b></td>
+                    <td>
+                        <input type="number" ng-model="mobile">
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>GENDER</b></td>
+                    <td>
+                        <input class="rd" type="radio" value="Male" ng-model="genser"><b>Male</b>
+                        <input class="rd" type="radio" value="Female" ng-model="genser"><b>Female</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Captcha<br>
+                        <button ng-click="refresh()" style="width: 80px;height: 30px; font-size: 15px">Refresh</button>
+                    </td>
+                    <td ng-init="captcha=41421">
+                        {{captcha}}<br>
+                        <input type="number" style="width: 80px;height: 30px; font-size: 15px">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button ng-click="register()"><b>Register</b></button>
+                    </td>
+                </tr>
+            </table>
+            </div>
+        </table>
+    </div>
+</body>
+</html>
