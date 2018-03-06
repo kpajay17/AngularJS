@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-checked-demo</title>
+    <script src="scripts/angular.js"></script>
+</head>
+<body ng-app>
+<fieldset>
+    <legend>Hobbies</legend>
+    Choose Your Hobbies:
+    <ol>
+        <input type="checkbox"  ng-model="all">Select All
+        <li><input type="checkbox" ng-checked="all" ng-model="Singing">Singing</li>
+        <li><input type="checkbox" ng-checked="all" ng-model="Music">Music</li>
+        <li><input type="checkbox" ng-checked="all" ng-model="Cricket">Cricket</li>
+        <li><input type="checkbox" ng-checked="all" ng-model="Movie">Movie</li>
+    </ol>
+    You are Singing Lover ?
+    <input type="checkbox" ng-checked="Singing">Yes<br>
+    You are Music Lover  ?
+    <input type="checkbox" ng-checked="Music">Yes<br>
+    You are Cricket Lover ?
+    <input type="checkbox" ng-checked="Cricket">Yes<br>
+    You are Movie Lover  ?
+    <input type="checkbox" ng-checked="Movie">Yes<br>
+</fieldset>
+</body>
+</html>

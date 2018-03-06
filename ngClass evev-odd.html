@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-class-odd / ng-class-even</title>
+    <script src="scripts/angular.js"></script>
+    <script>
+        var app=angular.module("MyApp",[]);
+        app.controller("HomeController",function ($scope) {
+           $scope.Students=[
+               {id:1001,name:"Ajay",branch:"MCA"},
+               {id:1002,name:"Sanjay",branch:"ITI"},
+               {id:1003,name:"Vijay",branch:"BA"},
+               {id:1004,name:"Sonu",branch:"12"},
+               {id:1005,name:"Prince",branch:"5"},
+               {id:1006,name:"Rahul",branch:"BSc Ag"},
+               {id:1001,name:"Rohit",branch:"ITI"},
+               {id:1001,name:"Lado",branch:"PG"},
+           ];
+        });
+    </script>
+    <style>
+        fieldset{
+            text-align: center;
+            color: #6F0101;
+            font-size: 25px;
+            margin: 50px auto;
+            width: 200px;
+            background-color: wheat;
+        }
+        thead{
+            background-color: #6F0101;
+            color: white;
+            font-size: 25px;
+
+        }
+        .oddstyle{
+            background-color: #3a87ad;
+        }
+        .evenstyle{
+            background-color: #5bc0de;
+        }
+
+    </style>
+
+</head>
+<body ng-app="MyApp" ng-controller="HomeController">
+<fieldset>
+    <legend>Student Details</legend>
+    <table border="1" width="400" height="400" align="center">
+        <thead>
+        <th>Roll No</th>
+        <th>Name</th>
+        <th>Branch</th>
+        </thead>
+        <tbody >
+        <tr ng-repeat="rec in Students" ng-class-odd="'oddstyle'" ng-class-even="'evenstyle'">
+            <td>{{rec.id}}</td>
+            <td>{{rec.name}}</td>
+            <td>{{rec.branch}}</td>
+        </tr>
+        </tbody>
+    </table>
+</fieldset>
+</body>
+</html>
