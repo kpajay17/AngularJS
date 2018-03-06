@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ngRepeate-Demo-2</title>
+    <script src="scripts/angular.js"></script>
+    <script>
+        var app=angular.module("MyApp",[]);
+        app.controller("HomeController",function ($scope) {
+            $scope.cars=[
+                {Name:'Ferrari',photo:'cars/Ferrari.jpg',Likes:0,Dislikes:0},
+                {Name:'BMW',photo:'cars/BMW.jpg',Likes:0,Dislikes:0},
+                {Name:'Chevrolet',photo:'cars/Chevrolet.jpg',Likes:0,Dislikes:0}
+
+            ];
+            $scope.LikeCounter=function (item) {
+                item.Likes++;
+            }
+            $scope.DislikeCounter=function (item) {
+                item.Dislikes++;
+            }
+        });
+    </script>
+    <style>
+        body{
+            background-image: url("Images/bgpick1.jpg");
+        }
+        table{
+            width: 1000px;
+            height: 500px;
+            text-align: center;
+            margin: 5px auto;
+            border-style: double;
+            background-color: #5bc0de;
+        }
+        .imgs{
+            width: 50px;
+            height:50px;
+        }
+    </style>
+</head>
+<body ng-app="MyApp" ng-controller="HomeController">
+    <table border="2">
+        <tr>
+        <th>Name</th>
+        <th>Preview</th>
+        <th>Like</th>
+        <th>Dislike</th>
+        <th>Like/Dislike</th>
+        </tr>
+        <tr ng-repeat="item in cars">
+             <td>{{item.Name}}</td>
+             <td>
+                 <img ng-src="{{item.photo}}" width="130" height="130" >
+             </td>
+             <td>{{item.Likes}}</td>
+             <td>{{item.Dislikes}}</td>
+             <td>
+                 <a href="#" ng-click="LikeCounter(item)" >
+                     <img src="Images/Like.JPG"ng-class="'imgs'" >
+                 </a>
+                 <a href="#" ng-click="DislikeCounter(item)" >
+                     <img src="Images/Dislike.JPG" ng-class="'imgs'">
+                 </a>
+             </td>
+        </tr>
+
+    </table>
+
+</body>
+</html>
