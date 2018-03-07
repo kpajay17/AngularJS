@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-style-demo</title>
+    <script src="scripts/angular.js"></script>
+</head>
+<body ng-app>
+<div align="center" ng-init="x=0;y=0">
+    <span>
+
+        X-axis ={{event1.clientX}}<br>
+        Y-axis ={{event1.clientY}}<br>
+
+    </span>
+    <img src="cars/Ferrari.jpg" ng-style="mystyle"
+         height="400" width="500"
+         ng-mousemove="event1=$event"
+
+
+    >
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-mousemove demo</title>
+    <script src="scripts/angular.js"></script>
+    <style>
+        img{
+            height: 400px;
+            width: 500px;
+        }
+    </style>
+    <script>
+        var app=angular.module("MyApp",[]);
+        app.controller("HomeController",function ($scope) {
+           $scope.x=0;
+           $scope.y=0;
+           $scope.msg="";
+           $scope.GetPosition=function (event) {
+               $scope.x=event.clientX;
+               $scope.y=event.clientY;
+               if ($scope.x>=629 && $scope.x<=675 && $scope.y>=317 && $scope.y<=404){
+                   $scope.msg="Car Front Tier";
+               }else{
+                   $scope.msg="";
+               }
+           }
+        });
+    </script>
+</head>
+<body ng-app="MyApp" ng-controller="HomeController">
+<div align="center">
+     <span>
+        X-axis ={{x}}<br>
+        Y-axis ={{y }}<br>
+        {{msg}}<br>
+    </span>
+        <img src="cars/Ferrari.jpg"  ng-mousemove="GetPosition($event)">
+
+    </div>
+
+</body>
+</html>

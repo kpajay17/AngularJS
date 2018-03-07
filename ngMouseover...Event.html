@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mouse Event</title>
+    <script src="scripts/angular.js"></script>
+</head>
+<body ng-app>
+<img ng-init="pic='cars/Ferrari.jpg'" ng-src="{{pic}}" ng-mouseenter="pic='cars/BMW.jpg'" ng-mouseleave="pic='cars/Ferrari.jpg'" width="400" height="250">
+<br>
+<b>Move Mouse Over the Image to change the Ads</b>
+<br>
+<img ng-init="bulb='Images/bulboff.JPG'" ng-src="{{bulb}}" ng-mousedown="bulb='Images/bulbon.JPG'" ng-mouseup="bulb='Images/bulboff.JPG'" height="300" width="300">
+<br>
+<b>Press hold down mouse button to ON the bulb</b>
+</body>
+</html>

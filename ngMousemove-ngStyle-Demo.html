@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-style</title>
+    <script src="scripts/angular.js"></script>
+    <script>
+        var app=angular.module("MyApp",[]);
+        app.controller("HomeController",function ($scope) {
+            $scope.Animate=function (event) {
+                $scope.imagePosition={
+                    "position":'fixed',
+                    "top":event.clientY+"px",
+                    "left":event.clientX+"px"
+                }
+            }
+        });
+    </script>
+</head>
+<body ng-app="MyApp" ng-controller="HomeController" ng-mousemove="Animate($event)">
+<div style="height: 1000px">
+    Move the mouse pointer to test.....
+</div>
+<div>
+    <img src="Images/flag.gif" ng-style="imagePosition">
+</div>
+</body>
+</html>

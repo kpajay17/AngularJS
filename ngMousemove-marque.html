@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-mousemove-marquee(HomeWork)</title>
+    <script src="scripts/angular.js"></script>
+    <style>
+        img{
+            height: 200px;
+            width: 300px;
+        }
+        img:hover {
+            border: 1px solid #777;
+            transform: scale(1.2);
+        }
+    </style>
+    <script>
+        var app=angular.module("MyApp",[]);
+        app.controller("HomeController",function ($scope) {
+
+        })
+    </script>
+</head>
+<body ng-app="MyApp" ng-controller="HomeController">
+<div>
+    <marquee onmouseover="this.stop();" onmouseout="this.start();" scrollamount="20">
+        <img src="cars/Ferrari.jpg">
+        <img src="cars/BMW.jpg">
+        <img src="cars/Lincoln.jpg">
+        <img src="cars/Chevrolet.jpg">
+    </marquee>
+</div>
+</body>
+</html>
