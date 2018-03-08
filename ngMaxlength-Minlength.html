@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-required-validate input</title>
+    <script src="scripts/angular.js"></script>
+</head>
+<style>
+    fieldset{
+        height: border-box;
+        width: 480px;
+        margin: 100px auto;
+    }
+    input{
+        height: 50px;
+    }
+</style>
+<body ng-app>
+<fieldset>
+    <legend>Required Input</legend>
+    <form name="form1">
+        <input type="text" name="txtName" ng-model="txtName" ng-required="true" ng-minlength="4" ng-maxlength="15">
+        <span ng-show="form1.txtName.$error.required"> User Name Required</span>
+        <span ng-show="form1.txtName.$error.minlength"> Input too short</span>
+        <span ng-show="form1.txtName.$error.maxlength"> Input too Long</span>
+    </form>
+</fieldset>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-keyevent</title>
+    <script src="scripts/angular.js"></script>
+</head>
+<style>
+    td{
+        font-weight: bold;
+        width: 50px;
+    }
+</style>
+<body ng-app>
+<div align="center" >
+
+
+    <table border="2">
+        <thead>
+        Input Text:<input type="text" ng-model="txt" ng-keypress="event=$event"><br><br>
+
+        </thead>
+         <tr>
+            <td>keyCode:</td>
+            <td>{{event.keyCode}}</td>
+        </tr>
+        <tr>
+            <td>charCode:</td>
+            <td>{{event.charCode}}</td>
+        </tr>
+        <tr>
+            <td>which:</td>
+            <td>{{event.which}}</td>
+        </tr>
+        <tr>
+            <td>shiftKey</td>
+            <td>{{event.shiftKey}}</td>
+        </tr>
+        <tr>
+            <td>ctrlKey</td>
+            <td>{{event.ctrlKey}}</td>
+        </tr>
+        <tr>
+            <td>altKey</td>
+            <td>{{event.altKey}}</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

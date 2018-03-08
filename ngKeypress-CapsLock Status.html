@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-keypress CapsLock Status</title>
+    <script src="scripts/angular.js"></script>
+    <script>
+        var app=angular.module("MyApp",[]);
+        app.controller("HomeController",function ($scope) {
+            $scope.status=false;
+            $scope.CheckCapsLock=function (event) {
+                var keycode=event.keyCode;
+                if(keycode>=65 && keycode<=90 && event.shiftKey==false){
+                    $scope.status=true;
+                }else{
+                    $scope.status=false;
+                }
+            }
+        });
+    </script>
+    <style>
+        fieldset{
+            height: border-box;
+            width: 480px;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+<body>
+<body ng-app="MyApp" ng-controller="HomeController">
+<fieldset>
+    <legend>Password Varify</legend>
+    Password : <input type="password" ng-model="txtpwd" ng-keypress="CheckCapsLock($event)">
+    <span ng-show="status">Caps Lock ON</span>
+</fieldset>
+</body>
+</html>

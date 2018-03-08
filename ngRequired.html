@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-required-validate input</title>
+    <script src="scripts/angular.js"></script>
+</head>
+<style>
+    fieldset{
+        height: border-box;
+        width: 480px;
+        margin: 100px auto;
+    }
+    input{
+        height: 50px;
+    }
+</style>
+<body ng-app>
+<fieldset>
+    <legend>Required Input</legend>
+    <form name="form1">
+        <input type="checkbox" ng-model="required"><b>Name Required ?</b><br><br>
+        <input type="text" name="txtName" ng-model="txtName" ng-required="required">
+        <span ng-show="form1.txtName.$invalid"> User Name Required</span>
+    </form>
+</fieldset>
+</body>
+</html>
